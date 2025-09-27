@@ -95,3 +95,7 @@ body {
 .form-control::-ms-input-placeholder {
   color: white !important;
 }
+
+section {
+    scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
+}
