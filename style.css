@@ -1,0 +1,97 @@
+:root {
+    --bs-body-bg: #0a0d10; /* Deep dark background */
+    --bs-body-color: #c9d1d9; /* Light text */
+    --bs-primary: #0d6efd; /* Blue accent color */
+    --bs-secondary-bg-subtle: #161b22; /* Card background */
+    --bs-form-control-bg: #161b22; /* Input background */
+    --bs-form-control-color: #c9d1d9; /* Input text */
+    --bs-form-control-border-color: #30363d; /* Input border */
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+.navbar {
+    background-color: rgba(10, 13, 16, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.accent-color {
+    color: var(--bs-primary);
+}
+
+.link-hover:hover {
+    color: var(--bs-primary) !important;
+}
+
+.card-project, .form-control {
+    background-color: var(--bs-secondary-bg-subtle);
+    border: 1px solid var(--bs-form-control-border-color);
+    color: var(--bs-form-control-color);
+}
+
+.card-project:hover {
+    border-color: rgba(13, 110, 253, 0.5); 
+}
+
+.form-control:focus {
+    background-color: var(--bs-form-control-bg);
+    color: var(--bs-form-control-color);
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Style for the Qualification Cards */
+.card-qualification {
+    background-color: var(--bs-secondary-bg-subtle);
+    border: 1px solid var(--bs-form-control-border-color);
+    transition: border-color 0.2s;
+}
+
+.card-qualification:hover {
+    border-color: rgba(13, 110, 253, 0.3);
+}
+
+/* Custom styles for the Skills section to display logo and name vertically */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--bs-body-color); /* Ensure text color is light */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.skill-item:hover {
+    color: var(--bs-primary); /* Blue accent on hover */
+}
+
+.skill-icon {
+    font-size: 3rem; /* Large icon size */
+    margin-bottom: 0.5rem;
+    line-height: 1; /* Adjust line height to prevent extra space */
+}
+
+/* Additional class to match the image spacing */
+.skill-group {
+    border-bottom: 1px solid var(--bs-form-control-border-color);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem !important;
+}
+
+.form-control::placeholder {
+  color: white !important; /* Use !important to override Bootstrap defaults */
+  opacity: 0.8; /* Optional: Adjust opacity for better readability */
+}
+
+/* For older browsers */
+.form-control:-ms-input-placeholder {
+  color: white !important;
+}
+
+.form-control::-ms-input-placeholder {
+  color: white !important;
+}
