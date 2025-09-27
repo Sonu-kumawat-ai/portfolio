@@ -31,7 +31,7 @@ This project is designed and developed by:
 
 ## ⚙️ Tech Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6)
+- **Frontend**: HTML5, CSS3, JavaScript
 - **Frameworks/Libraries**: Bootstrap 5
 - **Form Handling**: Formspree (via AJAX)
 - **Icons**: Bootstrap Icons, Font Awesome
