@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const homeElements = homeSection.querySelectorAll('p, h1, h2, .d-flex');
         
         const homeObserverOptions = {
-            threshold: 0.3,
+            threshold: 0.1,
             rootMargin: '0px'
         };
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Scroll Animation Observer
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
     };
 
