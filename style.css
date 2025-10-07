@@ -103,13 +103,17 @@ section {
 /* Scroll Animation Styles */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(-50px);
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.scroll-reveal[data-position="even"] {
+    transform: translateX(50px);
 }
 
 .scroll-reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 /* Staggered animation delay for cards */
@@ -189,4 +193,127 @@ section {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* Section Heading Animation */
+.section-heading {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.section-heading.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skill Item Hover Animation */
+.skill-item {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+}
+
+.skill-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Card Hover Enhancement */
+.card-project, .card-qualification {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-project:hover, .card-qualification:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.2);
+}
+
+/* Button Pulse Animation */
+.btn-primary {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(13, 110, 253, 0.4);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(13, 110, 253, 0.4);
+    }
+    50% {
+        box-shadow: 0 5px 30px rgba(13, 110, 253, 0.6);
+    }
+}
+
+/* Badge Animation */
+.badge {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+/* Link Hover with Slide Effect */
+.card-link,
+.accent-color[href],
+.text-white[href] {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.card-link::after,
+.accent-color[href]::after,
+.text-white[href]::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--bs-primary);
+    transition: width 0.3s ease;
+}
+
+.card-link:hover::after,
+.accent-color[href]:hover::after,
+.text-white[href]:hover::after {
+    width: 100%;
+}
+
+/* Navbar Animation */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bs-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 80%;
+}
+
+/* Form Input Focus Animation */
+.form-control {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
 }

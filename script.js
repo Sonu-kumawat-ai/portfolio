@@ -54,9 +54,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add scroll-reveal class to cards and observe them
     const cards = document.querySelectorAll('.card-project, .card-qualification');
-    cards.forEach(card => {
+    cards.forEach((card, index) => {
         card.classList.add('scroll-reveal');
+        // Add data attribute to track even/odd for alternating animation
+        if ((index + 1) % 2 === 0) {
+            card.setAttribute('data-position', 'even');
+        } else {
+            card.setAttribute('data-position', 'odd');
+        }
         observer.observe(card);
+    });
+
+    // Section Heading Animations
+    const sectionHeadings = document.querySelectorAll('section h3');
+    const headingObserverOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+
+    const headingObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, headingObserverOptions);
+
+    sectionHeadings.forEach(heading => {
+        heading.classList.add('section-heading');
+        headingObserver.observe(heading);
     });
 
     const form = document.getElementById('contact-form');
